@@ -1,0 +1,32 @@
+version: "3"
+services:
+  mongo1:
+    container_name: mongo1
+    build: ./
+    expose:
+      - 27017
+    ports:
+      - 27007:27017
+    restart: always
+    volumes:
+      - ./mongod.conf:/mongod.conf
+  mongo2:
+    container_name: mongo2
+    build: ./
+    expose:
+      - 27017
+    ports:
+      - 27008:27017
+    restart: always
+    volumes:
+      - ./mongod.conf:/mongod.conf
+  mongo3:
+    container_name: mongo3
+    build: ./
+    expose:
+      - 27017
+    ports:
+      - 27009:27017
+    restart: always
+    volumes:
+      - ./mongod.conf:/mongod.conf
